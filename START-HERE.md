@@ -6,6 +6,16 @@ These are the website files for https://github.com/BeeGee-source/christmas-party
 They use the Supabase table, policies and functions already created during setup.
 No npm install, paid service or build process is required.
 
+## This update: heading spacing and location
+
+The heading now reads `Baguio Peepz Christmas Party 2026` as one text string
+with normal spaces. The WHERE section and config both contain
+`7 Kosa Avenue Sunshine West VIC 3020`.
+
+CSS and JavaScript URLs use `?v=20260930-2` so this release requests fresh
+copies instead of reusing an older browser-cached version. Upload all 10 files
+together, wait for the deployment, then refresh the page with Ctrl+F5.
+
 ## Update the existing website
 
 1. Extract the downloaded ZIP on your Windows computer (right-click → Extract All).

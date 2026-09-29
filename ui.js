@@ -1,4 +1,4 @@
-import { CONFIG } from './config.js';
+import { CONFIG } from './config.js?v=20260930-2';
 export const $ = (selector, root = document) => root.querySelector(selector);
 export function el(tag, text, className) {
   const node = document.createElement(tag);

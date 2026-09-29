@@ -1,6 +1,6 @@
-import { CONFIG } from './config.js';
-import { hasSession, signIn, signOut, currentUser, listRsvps, updateHostRsvp, deleteHostRsvp } from './api.js';
-import { $, el, message, setupForm, fillForm, formValues, downloadText } from './ui.js';
+import { CONFIG } from './config.js?v=20260930-2';
+import { hasSession, signIn, signOut, currentUser, listRsvps, updateHostRsvp, deleteHostRsvp } from './api.js?v=20260930-2';
+import { $, el, message, setupForm, fillForm, formValues, downloadText } from './ui.js?v=20260930-2';
 
 const loginForm = $('#login-form');
 const editForm = $('#host-edit-form');

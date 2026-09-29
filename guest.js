@@ -1,6 +1,6 @@
-import { CONFIG } from './config.js';
-import { rpc } from './api.js';
-import { $, el, message, setupForm, fillForm, formValues, rpcValues, syncAttendance, downloadText } from './ui.js';
+import { CONFIG } from './config.js?v=20260930-2';
+import { rpc } from './api.js?v=20260930-2';
+import { $, el, message, setupForm, fillForm, formValues, rpcValues, syncAttendance, downloadText } from './ui.js?v=20260930-2';
 
 const form = $('#rsvp-form');
 const fields = $('#rsvp-fields');

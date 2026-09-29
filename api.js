@@ -1,4 +1,4 @@
-import { CONFIG } from './config.js';
+import { CONFIG } from './config.js?v=20260930-2';
 
 const SESSION_KEY = 'bg-christmas-2026-host';
 let session = null;
