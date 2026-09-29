@@ -1,4 +1,4 @@
-# BG’s Christmas Party 2026
+# Baguio Peepz Christmas Party 2026
 
 Saturday 19 December 2026, 1 pm AEDT (Melbourne time).
 
@@ -6,7 +6,7 @@ These are the website files for https://github.com/BeeGee-source/christmas-party
 They use the Supabase table, policies and functions already created during setup.
 No npm install, paid service or build process is required.
 
-## Your next step: upload the website files
+## Update the existing website
 
 1. Extract the downloaded ZIP on your Windows computer (right-click → Extract All).
 2. Open your GitHub repository and choose **Add file → Upload files**.
@@ -14,11 +14,11 @@ No npm install, paid service or build process is required.
 4. Check that `index.html`, `admin.html`, `styles.css`, `config.js`, `api.js`,
    `ui.js`, `guest.js`, `admin.js` and `favicon.svg` appear at the repository root.
    `START-HERE.md` can be uploaded too. Do not upload the ZIP itself.
-5. Enter `Add Christmas party website` as the commit message and commit to `main`.
+5. Enter `Update party details and private-link reminder` as the commit message and commit to `main`.
 
 Your existing README.md can remain. This package does not replace it.
 
-## Publishing (the next guided step)
+## Publishing
 
 1. In the repository, open Settings → Pages.
 2. Under Build and deployment, choose Deploy from a branch.
@@ -27,7 +27,9 @@ Your existing README.md can remain. This package does not replace it.
 5. The expected address is https://beegee-source.github.io/christmas-party-2026/.
    The host page is `admin.html` under that address.
 
-Nothing in this download has been published automatically.
+GitHub Pages is already enabled for this project. Uploading these replacement
+files and committing to main will trigger the next deployment. No Supabase SQL
+changes are needed. Nothing in this download has been published automatically.
 
 ## Files
 
@@ -87,16 +89,23 @@ are not realtime subscriptions. Guest saves also refresh the local potluck.
 
 ## Editing party details
 
-The location is marked “Location details coming soon” because no location was
-provided. Update `location` in `config.js` when ready. A location entered there
-will be public, like the rest of the website's code. You can instead share the
-address privately with your invitees and set the location text accordingly.
+The party is **Baguio Peepz Christmas Party 2026**, at
+**7 Kosa Avenue Sunshine West VIC 3020**. Event details appear in `config.js`
+and the guest/host HTML pages. The downloaded editing-link file uses the
+configured title and location.
 
 Party date/time wording currently appears in `index.html`, `admin.html` and
 the edit-link download text in `guest.js`. If the event changes, update those
 as well as `config.js`. There is no automatic RSVP deadline configured.
 
 ## Using the site
+
+- **Go to RSVP form** scrolls to the form; it does not submit anything.
+- **Send our RSVP** creates a response. When editing, **Save changes** updates it.
+- After a save, a highlighted private-link panel offers copy and file download.
+  Guests are asked to confirm they have kept their link before using the
+  **Done — view the potluck** button. Their RSVP is already saved at that point;
+  the checkbox is a reminder, not proof they stored the link.
 
 - One RSVP represents one household. The form allows 0–50 adults and 0–50 kids.
 - Food category describes the main contribution; the Bringing field can list

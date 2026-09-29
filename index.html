@@ -7,7 +7,7 @@
   <meta name="referrer" content="no-referrer">
   <meta name="robots" content="noindex,nofollow">
   <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src https://kngelwfupxtznqcwbgnf.supabase.co; object-src 'none'; base-uri 'self'; form-action 'none'">
-  <title>BG’s Christmas Party · 19 December 2026</title>
+  <title>Baguio Peepz Christmas Party 2026 · 19 December 2026</title>
   <link rel="icon" href="./favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="./styles.css">
   <script type="module" src="./guest.js"></script>
@@ -15,7 +15,7 @@
 <body>
   <a class="skip" href="#main">Skip to content</a>
   <header class="site-header wrap">
-    <a class="brand" href="./index.html"><span class="brand-mark" aria-hidden="true">✳</span> BG & friends <span class="year">/ 2026</span></a>
+    <a class="brand" href="./index.html"><span class="brand-mark" aria-hidden="true">✳</span> <span class="brand-name">Baguio Peepz<span class="brand-subtitle">Christmas Party 2026</span></span></a>
     <nav aria-label="Main navigation"><a href="#rsvp">RSVP</a><a href="#potluck">The potluck</a><a class="host-link" href="./admin.html">Host login ↗</a></nav>
   </header>
   <main id="main">
@@ -23,8 +23,8 @@
       <div class="hero-copy">
         <p class="eyebrow"><span class="tiny-star" aria-hidden="true">✦</span> YOU’RE INVITED</p>
         <h1>A little Christmas.<br>A lot of <em>good company.</em></h1>
-        <p class="hero-intro">Come celebrate at BG’s Christmas Party. Bring the family, bring a plate, and make yourself at home.</p>
-        <a class="button primary" href="#rsvp">Count us in <span aria-hidden="true">↗</span></a>
+        <p class="hero-intro">Come celebrate at Baguio Peepz Christmas Party 2026. Bring the family, bring a plate, and make yourself at home.</p>
+        <a class="button primary" href="#rsvp">Go to RSVP form <span aria-hidden="true">↓</span></a>
         <p class="hero-note">One RSVP per household · No account needed</p>
       </div>
       <div class="invitation" aria-label="Saturday 19 December 2026, 1 pm, Melbourne time">
@@ -40,12 +40,12 @@
     </section>
     <section class="event-strip wrap" aria-label="Party details">
       <div><span class="detail-label">WHEN</span><strong>Saturday, 19 December</strong><span>2026 · from 1 pm AEDT</span></div>
-      <div><span class="detail-label">WHERE</span><strong id="location">Location details coming soon</strong><span>Melbourne time</span></div>
+      <div><span class="detail-label">WHERE</span><strong id="location">7 Kosa Avenue Sunshine West VIC 3020</strong></div>
       <div><span class="detail-label">WHAT TO BRING</span><strong>A plate to share</strong><span>Check the potluck for inspiration</span></div>
     </section>
     <section id="rsvp" class="rsvp-section wrap section">
       <div class="section-intro"><p class="eyebrow">SAVE YOUR SPOT</p><h2>Who’s coming<br>to Christmas?</h2><p>Let us know who’s joining and what you’re bringing. Still figuring it out? “Maybe” is welcome too.</p>
-        <div class="side-note"><span aria-hidden="true">✧</span><div><strong>Plans can change.</strong><p>After submitting, save your private edit link to update your RSVP later.</p></div></div>
+        <div class="side-note"><span aria-hidden="true">✧</span><div><strong>Keep your link. Change your plans.</strong><p>After submitting, copy your private edit link into Notes or download it. Use that link next time to update your RSVP — no account needed.</p></div></div>
         <p class="small">Confirmed household names and food contributions appear on the public potluck list. Dietary details are visible to your household and the host.</p>
       </div>
       <div class="form-card">
@@ -67,21 +67,32 @@
           <p class="form-foot">No account. Just your RSVP and a little Christmas spirit.</p>
         </form>
         <section id="saved-panel" class="saved-panel" tabindex="-1" hidden>
-          <p class="eyebrow">YOU’RE ALL SORTED</p><h3 id="saved-title">Your RSVP is saved.</h3><p>Keep this private link. You’ll need it to change your response on another device.</p>
-          <label>Your private edit link<input id="edit-link" readonly spellcheck="false"></label>
-          <div class="button-row"><button type="button" id="copy-link" class="button primary">Copy edit link</button><button type="button" id="download-link" class="button secondary">Save link as a file</button></div>
-          <p id="copy-status" class="small" role="status"></p><button type="button" id="edit-again" class="text-button">Make another change</button>
+          <p class="eyebrow">RESPONSE RECEIVED</p><h3 id="saved-title">Your RSVP is saved.</h3>
+          <div class="save-link-callout">
+            <p class="eyebrow">BEFORE YOU GO</p>
+            <h4>Save your private edit link</h4>
+            <p>This is your way back to change your guest numbers, food or attendance. We don’t email you a copy.</p>
+            <ol class="save-link-steps"><li><strong>Keep a copy:</strong> copy the link into Notes or a message to yourself, or download the link file below.</li><li><strong>Next time:</strong> open that saved link to update this RSVP.</li></ol>
+            <label>Your household’s private edit link<input id="edit-link" readonly spellcheck="false" aria-describedby="link-privacy"></label>
+            <div class="button-row"><button type="button" id="copy-link" class="button primary">Copy private link</button><button type="button" id="download-link" class="button secondary">Download link file</button></div>
+            <p id="copy-status" class="small" role="status"></p>
+            <p id="link-privacy" class="small">Keep this link within your household. Anyone with it can view and edit your RSVP, including dietary notes.</p>
+          </div>
+          <label class="save-link-check"><input type="checkbox" id="link-saved"><span>I’ve saved my private edit link somewhere I can find it.</span></label>
+          <button type="button" id="finish-rsvp" class="button primary full" disabled>Done — view the potluck</button>
+          <p class="small saved-help">Your RSVP is already saved. This reminder helps you keep access for next time. Lost the link? Ask BG to update your RSVP.</p>
+          <button type="button" id="edit-again" class="text-button">Make another change</button>
         </section>
       </div>
     </section>
     <section id="potluck" class="potluck-section section">
-      <div class="wrap"><div class="section-heading"><div><p class="eyebrow">A TABLE FULL OF GOOD THINGS</p><h2>What’s on the menu?</h2><p>Here’s what confirmed households are bringing. Find a gap or bring a favourite.</p></div><button id="refresh-potluck" class="button secondary" type="button">↻ Refresh list</button></div>
+      <div class="wrap"><div class="section-heading"><div><p class="eyebrow">A TABLE FULL OF GOOD THINGS</p><h2 id="potluck-title" tabindex="-1">What’s on the menu?</h2><p>Here’s what confirmed households are bringing. Find a gap or bring a favourite.</p></div><button id="refresh-potluck" class="button secondary" type="button">↻ Refresh list</button></div>
         <div class="filter-row" id="category-filters" aria-label="Filter contributions by category"></div>
         <p id="potluck-status" class="notice" role="status" hidden></p><div id="potluck-grid" class="potluck-grid" aria-live="polite"></div>
         <p class="small potluck-foot">The list loads when you open this page. Use Refresh list for the latest contributions.</p>
       </div>
     </section>
   </main>
-  <footer class="wrap site-footer"><span class="brand"><span class="brand-mark" aria-hidden="true">✳</span> Made for a merry little gathering.</span><span>BG’s Christmas Party · 2026</span></footer>
+  <footer class="wrap site-footer"><span class="brand"><span class="brand-mark" aria-hidden="true">✳</span> Made for a merry little gathering.</span><span>Baguio Peepz Christmas Party 2026</span></footer>
 </body>
 </html>

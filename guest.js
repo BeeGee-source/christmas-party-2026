@@ -50,6 +50,7 @@ function resetHousehold() {
   history.replaceState(null, '', location.pathname + '#rsvp');
   form.reset(); form.elements.food_category.value = 'Undecided'; syncAttendance(form);
   $('#saved-panel').hidden = true; form.hidden = false; fields.disabled = false;
+  $('#link-saved').checked = false; $('#finish-rsvp').disabled = true; $('#copy-status').textContent = '';
   message(formStatus); setMode(); form.elements.household_name.focus();
 }
 $('#new-household').addEventListener('click', resetHousehold);
@@ -69,7 +70,11 @@ form.addEventListener('submit', async event => {
     if (!result?.id || (!wasEditing && !/^[0-9a-f]{64}$/.test(result.edit_token || ''))) {
       throw new Error('We could not confirm the saved response. Please check with BG before submitting again.');
     }
-    if (!wasEditing) storeToken(result.edit_token);
+    if (!wasEditing) {
+      storeToken(result.edit_token);
+      $('#link-saved').checked = false; $('#finish-rsvp').disabled = true;
+    }
+    $('#copy-status').textContent = '';
     $('#edit-link').value = editUrl();
     $('#saved-title').textContent = wasEditing ? 'Your changes are saved.' : 'Your RSVP is saved.';
     form.hidden = true; $('#saved-panel').hidden = false;
@@ -86,14 +91,22 @@ $('#edit-again').addEventListener('click', () => {
 $('#copy-link').addEventListener('click', async () => {
   try {
     await navigator.clipboard.writeText($('#edit-link').value);
-    $('#copy-status').textContent = 'Copied! Save it somewhere only your household can access.';
+    $('#copy-status').textContent = 'Copied! Now paste it into Notes or a message to yourself. Copying alone doesn’t keep it for next time.';
   } catch {
     $('#edit-link').focus(); $('#edit-link').select();
     $('#copy-status').textContent = 'Select and copy the link above, or save it as a file.';
   }
 });
 $('#download-link').addEventListener('click', () => {
-  downloadText('Christmas-2026-private-edit-link.txt', `BG’s Christmas Party — 19 December 2026, 1 pm AEDT\n\nPrivate RSVP edit link:\n${editUrl()}\n\nAnyone with this link can view and edit your household’s RSVP. Keep it private.\n`);
+  downloadText('Baguio-Peepz-2026-private-edit-link.txt', `${CONFIG.title} — 19 December 2026, 1 pm AEDT\n${CONFIG.location}\n\nOpen this link to change your guest numbers, food or attendance:\nPrivate RSVP edit link:\n${editUrl()}\n\nAnyone with this link can view and edit your household’s RSVP. Keep it private.\n`);
+  $('#copy-status').textContent = 'Download requested. Check your Downloads folder for Baguio-Peepz-2026-private-edit-link.txt and keep that file.';
+});
+$('#link-saved').addEventListener('change', () => {
+  $('#finish-rsvp').disabled = !$('#link-saved').checked;
+});
+$('#finish-rsvp').addEventListener('click', () => {
+  if (!$('#link-saved').checked) return;
+  $('#potluck-title').focus();
 });
 
 const symbols = { Main: '♨', Side: '❋', Dessert: '✧', Drinks: '◉', Snacks: '✦', Other: '✳', Undecided: '?', Nothing: '♡' };
